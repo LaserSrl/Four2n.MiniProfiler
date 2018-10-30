@@ -72,12 +72,6 @@
       <HintPath>packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Orchard.Core">
-      <HintPath>..\Orchard.Sources\src\Orchard.Web\bin\Orchard.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Orchard.Framework">
-      <HintPath>..\Orchard.Sources\src\Orchard.Web\bin\Orchard.Framework.dll</HintPath>
-    </Reference>
     <Reference Include="PoorMansTSqlFormatterLib35">
       <HintPath>Libs\PoorMansTSqlFormatter\PoorMansTSqlFormatterLib35.dll</HintPath>
     </Reference>
@@ -184,6 +178,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Orchard\src\Orchard.Web\Core\Orchard.Core.csproj">
+      <Project>{9916839c-39fc-4ceb-a5af-89ca7e87119f}</Project>
+      <Name>Orchard.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orchard\src\Orchard\Orchard.Framework.csproj">
+      <Project>{2d1d92bb-4555-4cbe-8d0e-63563d6ce4c6}</Project>
+      <Name>Orchard.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
