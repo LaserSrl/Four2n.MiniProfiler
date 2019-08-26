@@ -9,6 +9,7 @@ using Orchard.DisplayManagement.Descriptors;
 using Orchard.FileSystems.VirtualPath;
 using Orchard.Logging;
 using Orchard.Environment.Extensions;
+using Orchard.Environment.Configuration;
 using Four2n.Orchard.MiniProfiler.Features;
 using Four2n.Orchard.MiniProfiler.Services;
 
@@ -18,6 +19,7 @@ namespace Four2n.MiniProfilter.Features.ProfilingContent.Overrides {
     public class ProfilingContentDisplay : IContentDisplay {
         private readonly IProfilerService _profiler;
         private readonly DefaultContentDisplay _innerContentDisplay;
+        private readonly ShellSettings _shellSettings;
 
         public ProfilingContentDisplay(
             Lazy<IEnumerable<IContentHandler>> handlers,
@@ -26,7 +28,8 @@ namespace Four2n.MiniProfilter.Features.ProfilingContent.Overrides {
             RequestContext requestContext,
             IVirtualPathProvider virtualPathProvider,
             IWorkContextAccessor workContextAccessor,
-            IProfilerService profiler)
+            IProfilerService profiler,
+            ShellSettings shellSettings)
         {
 
             _innerContentDisplay = new DefaultContentDisplay(
@@ -35,10 +38,12 @@ namespace Four2n.MiniProfilter.Features.ProfilingContent.Overrides {
                 shapeTableLocator,
                 requestContext,
                 virtualPathProvider,
-                workContextAccessor);
+                workContextAccessor,
+                shellSettings);
 
             _profiler = profiler;
         }
+
 
         public ILogger Logger
         {
