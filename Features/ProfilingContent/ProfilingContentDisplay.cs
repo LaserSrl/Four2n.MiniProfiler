@@ -19,7 +19,6 @@ namespace Four2n.MiniProfilter.Features.ProfilingContent.Overrides {
     public class ProfilingContentDisplay : IContentDisplay {
         private readonly IProfilerService _profiler;
         private readonly DefaultContentDisplay _innerContentDisplay;
-        private readonly ShellSettings _shellSettings;
 
         public ProfilingContentDisplay(
             Lazy<IEnumerable<IContentHandler>> handlers,

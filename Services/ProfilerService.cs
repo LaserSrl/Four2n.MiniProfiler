@@ -43,7 +43,7 @@ namespace Four2n.Orchard.MiniProfiler.Services
             }
 
             var stack = this.steps.GetOrAdd(key, k => new ConcurrentStack<IDisposable>());
-            var step = this.Profiler.Step(message, isVerbose ? ProfileLevel.Verbose : ProfileLevel.Info);
+            var step = this.Profiler.Step(message);
             stack.Push(step);
         }
 

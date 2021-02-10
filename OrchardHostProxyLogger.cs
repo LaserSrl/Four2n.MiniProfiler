@@ -35,7 +35,7 @@ namespace Four2n.Orchard.MiniProfiler
             {
                 if ("BeginRequest".Equals(format))
                 {
-                    MiniProfiler.Start(ProfileLevel.Verbose);
+                    MiniProfiler.Start();
                 }
                 else if ("EndRequest".Equals(format))
                 {
